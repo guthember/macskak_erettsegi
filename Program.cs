@@ -133,6 +133,25 @@ namespace macskak
 
         }
 
+        static void Hatodik()
+        {
+            Console.WriteLine("\n6. feladat");
+            int max = 0;
+            string mikor = "";
+
+            for (int i = 0; i < 14; i++)
+            {
+                if (Math.Abs(sz[i].suly - f[i].suly) > max && f[i].suly != 0)
+                {
+                    max = Math.Abs(sz[i].suly - f[i].suly);
+                    mikor = sz[i].datum;
+                }
+            }
+
+            Console.WriteLine("Legnagyobb eltérés: {0}, {1} napon volt.",
+                max, mikor);
+        }
+
 
         static void Main(string[] args)
         {
@@ -141,6 +160,7 @@ namespace macskak
             Harmadik();
             Negyedik();
             Otodik();
+            Hatodik();
 
             Console.ReadKey();
         }
