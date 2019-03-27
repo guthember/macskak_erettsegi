@@ -77,10 +77,56 @@ namespace macskak
             fileF.Close();
         }
 
+        static void Harmadik()
+        {
+            Console.WriteLine("\n3. feladat");
+            bool van = false;
+            for (int i = 0; i < 14; i++)
+            {
+                if ( f[i].suly == 0)
+                {
+                    Console.WriteLine(f[i].datum);
+                    van = true;
+                }
+            }
+
+            if (!van)
+            {
+                Console.WriteLine("Nem volt olyan eset amikor nem lehetett megmérni.");
+            }
+        }
+
+        static void Negyedik()
+        {
+            Console.WriteLine("\n4. feladat");
+            Console.Write("Kérek egy tömegértéket: ");
+            int tomeg = int.Parse(Console.ReadLine());
+
+            int darab = 0;
+
+            for (int i = 0; i < 14; i++)
+            {
+                if (f[i].suly < tomeg && f[i].suly != 0)
+                {
+                    darab++;
+                }
+
+                if (sz[i].suly < tomeg && sz[i].suly != 0)
+                {
+                    darab++;
+                }
+            }
+
+            Console.WriteLine("{0} alkalommal volt valódi kisebb mérés.",darab);
+        }
+
         static void Main(string[] args)
         {
             Elso();
             Masodik();
+            Harmadik();
+            Negyedik();
+
             Console.ReadKey();
         }
     }
