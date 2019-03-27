@@ -120,12 +120,27 @@ namespace macskak
             Console.WriteLine("{0} alkalommal volt valódi kisebb mérés.",darab);
         }
 
+        static void Otodik()
+        {
+            Console.WriteLine("\n5. feladat");
+            for (int i = 1; i < 14; i++)
+            {
+                if (sz[i].suly < sz[i-1].suly)
+                {
+                    Console.WriteLine(sz[i].datum);
+                }
+            }
+
+        }
+
+
         static void Main(string[] args)
         {
             Elso();
             Masodik();
             Harmadik();
             Negyedik();
+            Otodik();
 
             Console.ReadKey();
         }
