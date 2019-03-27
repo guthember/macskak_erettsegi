@@ -51,10 +51,36 @@ namespace macskak
             }
         }
 
+        static void Masodik()
+        {
+            Console.WriteLine("\n2. feladat");
+            Console.WriteLine("adatok kiírása");
+            FileStream fileSz = new FileStream("szurke.txt", FileMode.Create);
+            StreamWriter kiSz = new StreamWriter(fileSz);
+
+            for (int i = 0; i < 14; i++)
+			{
+                kiSz.WriteLine("{0} {1}", sz[i].datum, sz[i].suly);
+			}
+
+            kiSz.Close();
+            fileSz.Close();
+            FileStream fileF = new FileStream("fekete.txt", FileMode.Create);
+            StreamWriter kiF = new StreamWriter(fileF);
+
+            for (int i = 0; i < 14; i++)
+			{
+                kiF.WriteLine("{0} {1}", f[i].datum, f[i].suly);
+			}
+
+            kiF.Close();
+            fileF.Close();
+        }
+
         static void Main(string[] args)
         {
             Elso();
-
+            Masodik();
             Console.ReadKey();
         }
     }
